@@ -1,0 +1,22 @@
+{
+  "name": "nestcamtoslack",
+  "version": "1.0.0",
+  "description": "An AWS Lambda function to capture a jpg from a nest cam and post it to slack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bombbomb/NestCamToSlack.git"
+  },
+  "author": "fj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bombbomb/NestCamToSlack/issues"
+  },
+  "homepage": "https://github.com/bombbomb/NestCamToSlack#readme",
+  "dependencies": {
+    "slack-notify": "^0.1.6"
+  }
+}
