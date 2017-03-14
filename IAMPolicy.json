@@ -1,0 +1,17 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+    {
+        "Sid": "Stmt1489527888000",
+        "Effect": "Allow",
+        "Action": [
+            "s3:PutObject",
+            "s3:PutObjectAcl"
+        ],
+        "Resource": [
+            "arn:aws:s3:::bbcam",
+            "arn:aws:s3:::bbcam/*"
+        ]
+    }
+]
+}
