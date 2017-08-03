@@ -7,6 +7,7 @@ let slack = require('slack-notify')(process.env.HOOK_URL);
 
 const s3Bucket = process.env.S3_BUCKET;
 const webCamImgUrl = process.env.CAM_URL;
+const slackChannel = process.env.SLACK_CHANNEL;
 
 let https = require('https');
 let fs = require('fs');
@@ -38,16 +39,17 @@ exports.handler = (event, context, callback) => {
                 }
 
                 slack.send({
-                    channel: '#doorbell',
+                    channel: slackChannel,
                     icon_url: 'https://s3.amazonaws.com/bbemail/ART/icons/BbLabs.png',
-                    text: 'Someone\'s at the door!',
+                    text: 'Someone\'s at BbLabs!',
                     username: 'BBLabs',
                     attachments: [
                         {
                             image_url: 'https://s3.amazonaws.com/' + s3Bucket + '/' + s3Params.Key
                         }
                     ]
-                }, function() {
+                }, function(err, r) {
+                    console.log("slack result", err, r);
                     callback(null, 'All done!');
                 });
 
